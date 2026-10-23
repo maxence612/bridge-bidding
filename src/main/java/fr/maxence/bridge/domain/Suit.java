@@ -1,15 +1,19 @@
 package fr.maxence.bridge.domain;
 
 public enum Suit {
-    TREFLE(♣),CARREAU(♦),COEUR(♥),PIQUE(♠);
+    CLUBS("♣"),DIAMONDS("♦"),HEARTS("♥"),SPADES("♠");
 
-    private final String suitSymbol;
+    private final String symbol;
 
-    Suit(String suitSymbol) {
-        this.suitSymbol = suitSymbol;
+    Suit(String symbol) {
+        this.symbol = symbol;
     }
 
-    public String getsuitSymbol() {
-        return suitSymbol;
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public boolean isMajor(){
+        return this == HEARTS || this == SPADES ; 
     }
 }
