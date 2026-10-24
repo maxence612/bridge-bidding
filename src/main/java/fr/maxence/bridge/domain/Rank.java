@@ -1,17 +1,23 @@
 package fr.maxence.bridge.domain;
 
 public enum Rank {
-    DEUX(0), TROIS(0), QUATRE(0), CINQ(0), SIX(0), SEPT(0),
-    HUIT(0), NEUF(0), DIX(0), VALET(1), DAME(2), ROI(3), AS(4);
+    DEUX(0,"2"), TROIS(0,"3"), QUATRE(0,"4"), CINQ(0,"5"), SIX(0,"6"), SEPT(0,"7"),
+    HUIT(0,"8"), NEUF(0,"9"), DIX(0,"10"), VALET(1,"J"), DAME(2,"Q"), ROI(3,"K"), AS(4,"A");
 
     private final int honorPoints;
+    private final String rankSymbol;
 
-    Rank(int honorPoints) {
+    Rank(int honorPoints,String rankSymbol) {
         this.honorPoints = honorPoints;
+        this.rankSymbol = rankSymbol;
     }
 
     public int getHonorPoints() {
         return honorPoints;
+    }
+
+    public String getRankSymbol(){
+        return rankSymbol;
     }
 }
     
